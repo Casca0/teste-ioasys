@@ -12,6 +12,10 @@ export const InputWrapper = styled.div`
 	&:last-child{
 		margin-top: 16px;
 	}
+
+	@media screen and (max-width: 768px) {
+		width: 288px;
+	}
 `;
 
 export const InputLabel = styled.label`
@@ -33,6 +37,7 @@ export const InputContent = styled.input`
 	width: max-content;
 	padding-top: 8px;
 	padding-left: 16px;
+
 `;
 
 export const SubmitButton = styled.input`
@@ -51,4 +56,16 @@ export const SubmitButton = styled.input`
 	top: 50%;
 	transform: translateY(-50%);
 	cursor: pointer;
+`;
+
+export const LoginError = styled.div`
+	background: rgba(255, 255, 255, 0.6);
+	color: #fff;
+	font-size: 16px;
+	line-height: 16px;
+	font-weight: 700;
+	font-family: 'Heebo', sans-serif;
+	padding: 16px;
+	margin-top: 24px;
+	border-radius: 4px;
 `;

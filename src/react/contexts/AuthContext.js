@@ -7,7 +7,7 @@ export function AuthProvider({ children }) {
 	const { handleLogin, handleLogout, isAuthenticated, isLoading, isError } = useAuth();
 
 	return (
-		<AuthContext.Provider data={{ handleLogin, handleLogout, isAuthenticated, isLoading, isError }}>
+		<AuthContext.Provider value={{ handleLogin, handleLogout, isAuthenticated, isLoading, isError }}>
 			{children}
 		</AuthContext.Provider>
 	);

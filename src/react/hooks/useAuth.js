@@ -24,7 +24,7 @@ export const useAuth = () => {
 		setIsLoading(false);
 	}, []);
 
-	async function handleLogin({ email, password}) {
+	async function handleLogin({ email, password }) {
 		const data = JSON.stringify({ email, password });
 		const config = {
 			method: 'POST',
@@ -35,9 +35,11 @@ export const useAuth = () => {
 		};
 
 		try {
-			const response = await api.post('/auth/sign-in', config);
-			const data = response.data;
+			const response = await api('/auth/sign-in', config);
+			const data = response.data.name;
 			const dataHeader = response.headers;
+			console.log('Data', data);
+			console.log('DataHeaders', dataHeader);
             
 			setIsError(false);
 			setIsAuthenticated(true);
