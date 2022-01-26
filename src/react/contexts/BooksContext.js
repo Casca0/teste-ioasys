@@ -1,13 +1,22 @@
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { fetchBooks } from '../services/fetchBooks';
 
 const BooksContext = createContext({});
 
 export function BooksProvider({ children }) {
-	const { getBooks } = fetchBooks();
+	const [book, setBook] = useState([]);
+
+	useEffect( () => {
+		async function fetchData() {
+			const response = await fetchBooks();
+			console.log('data context', response.data);
+			setBook(response.data);
+		}
+		fetchData();
+	}, []);
 
 	return (
-		<BooksContext.Provider value={{ getBooks }}>
+		<BooksContext.Provider value={{ book }}>
 			{children}
 		</BooksContext.Provider>
 	);

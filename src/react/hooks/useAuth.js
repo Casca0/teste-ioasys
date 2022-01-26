@@ -55,32 +55,5 @@ export const useAuth = () => {
 		localStorage.removeItem('authorization');
 	}
 
-	async function refreshToken() {
-		const token = localStorage.getItem('authorization');
-		const rfToken = localStorage.getItem('refresh-token');
-		console.log('Token da função', rfToken);
-		const config = {
-			method: 'POST',
-			headers: {
-				'Content-type': 'application/json',
-				'authorization': JSON.parse(token)
-			},
-			data: {
-				'refresh-token': rfToken
-			}
-		};
-
-		try {
-			const response = await api('/auth/refresh-token', config);
-			const data = response.data;
-			console.log('Token', data);
-			return data;
-		} catch(err) {
-			console.error(err);
-		}
-
-		console.log('Executou refreshToken');
-	}
-
-	return { handleLogin, handleLogout, isAuthenticated, isLoading, isError, refreshToken };
+	return { handleLogin, handleLogout, isAuthenticated, isLoading, isError };
 };

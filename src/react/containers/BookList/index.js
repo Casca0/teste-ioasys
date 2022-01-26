@@ -1,17 +1,23 @@
 import React from 'react';
 import { useBooksContext } from '../../contexts/BooksContext';
 
-// import * as S from './styled';
+import BookCard from '../../pages/BooksPage/components/BookCard';
+import * as S from './styled';
 
 const BookList = () => {
-	const { getBooks } = useBooksContext();
-
-	document.addEventListener('DOMContentLoaded', getBooks());
+	const { book } = useBooksContext();
+	console.log('Data livros', book.data);
 
 	return (
-		<h1>
-			teste
-		</h1>
+		<S.Books>
+			{book.data?.map(( book ) => <BookCard
+				key={book.id}
+				image={book.imageUrl}
+				title={book.title}
+				author={book.authors}
+				info={book.pageCount, book.publisher, book.published}
+			/>)}
+		</S.Books>
 	);
 };
 
