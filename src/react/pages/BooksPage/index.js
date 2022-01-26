@@ -1,11 +1,18 @@
 import React from 'react';
-import Teste from './components/Teste/index';
+import Header from '../../containers/Header';
+import BookList from '../../containers/BookList';
 
-// import * as S from './styled';
+import * as S from './styled';
 
 const BooksPage = () => {
 	return (
-		<Teste />
+		<>
+			<S.Styles />
+			<S.MainWrapper>
+				<Header />
+				<BookList />
+			</S.MainWrapper>
+		</>
 	);
 };
 

@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import image from './images/background.svg';
-import backgroundMobile from './images/background-mobile.svg';
+import image from '../images/background.svg';
+import backgroundMobile from '../images/background-mobile.svg';
 
 const GlobalStyle = createGlobalStyle`
   body {

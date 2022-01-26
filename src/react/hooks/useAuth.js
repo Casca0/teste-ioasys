@@ -38,8 +38,6 @@ export const useAuth = () => {
 			const response = await api('/auth/sign-in', config);
 			const data = response.data.name;
 			const dataHeader = response.headers;
-			console.log('Data', data);
-			console.log('DataHeaders', dataHeader);
             
 			setIsError(false);
 			setIsAuthenticated(true);
