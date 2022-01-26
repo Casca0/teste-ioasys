@@ -20,7 +20,7 @@ export const fetchBooks = () => {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
-				'authorization': JSON.parse(authToken),
+				'authorization': `Bearer ${JSON.parse(authToken)}`,
 			},
 			data: {
 				'refresh-token': token,
@@ -28,7 +28,7 @@ export const fetchBooks = () => {
 		};
 
 		try {
-			const response = await api('/books', config);
+			const response = await api('/books?page=1&amount=8', config);
 			const data = response.data;
 			console.log(data);
 		} catch(err) {
