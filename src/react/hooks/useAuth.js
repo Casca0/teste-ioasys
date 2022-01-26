@@ -36,13 +36,14 @@ export const useAuth = () => {
 
 		try {
 			const response = await api('/auth/sign-in', config);
-			const data = response.data.name;
+			const data = response.data;
 			const dataHeader = response.headers;
             
 			setIsError(false);
 			setIsAuthenticated(true);
-			localStorage.setItem('user-info', JSON.stringify(data));
+			localStorage.setItem('username', data.name);
 			localStorage.setItem('authorization', JSON.stringify(dataHeader.authorization));
+			localStorage.setItem('refresh-token', response.headers['refresh-token']);
 		} catch(err) {
 			setIsError(true);
 			console.error(err);
@@ -54,5 +55,32 @@ export const useAuth = () => {
 		localStorage.removeItem('authorization');
 	}
 
-	return { handleLogin, handleLogout, isAuthenticated, isLoading, isError };
+	async function refreshToken() {
+		const token = localStorage.getItem('authorization');
+		const rfToken = localStorage.getItem('refresh-token');
+		console.log('Token da função', rfToken);
+		const config = {
+			method: 'POST',
+			headers: {
+				'Content-type': 'application/json',
+				'authorization': JSON.parse(token)
+			},
+			data: {
+				'refresh-token': rfToken
+			}
+		};
+
+		try {
+			const response = await api('/auth/refresh-token', config);
+			const data = response.data;
+			console.log('Token', data);
+			return data;
+		} catch(err) {
+			console.error(err);
+		}
+
+		console.log('Executou refreshToken');
+	}
+
+	return { handleLogin, handleLogout, isAuthenticated, isLoading, isError, refreshToken };
 };

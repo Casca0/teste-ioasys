@@ -8,6 +8,9 @@ export const MainWrapper = styled.div`
 
 export const Styles = createGlobalStyle`
 	body {
-		background: url(${background});
+		background: url(${background}) no-repeat;
+		background-position: center;
+		background-size: cover;
+		height: 100%;
 	}
 `;

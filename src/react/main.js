@@ -7,11 +7,11 @@ import App from './pages/app';
 
 const react = () => {
 	ReactDOM.render(
-		<BooksProvider>
-			<AuthProvider>
+		<AuthProvider>
+			<BooksProvider>
 				<App />
-			</AuthProvider>
-		</BooksProvider>,
+			</BooksProvider>
+		</AuthProvider>,
 		document.getElementById('root'),
 	);
 };

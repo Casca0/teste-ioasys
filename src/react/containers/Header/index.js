@@ -4,7 +4,7 @@ import { useAuthContext } from '../../contexts/AuthContext';
 import * as S from './styled';
 
 const Header = () => {
-	const user = localStorage.getItem('user-info');
+	const user = localStorage.getItem('username');
 
 	const { handleLogout } = useAuthContext();
 
