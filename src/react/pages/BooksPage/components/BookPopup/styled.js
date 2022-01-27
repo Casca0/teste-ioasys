@@ -12,6 +12,7 @@ export const PopupOverlay = styled.section`
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(2px);
 `;
 
 export const PopupContainer = styled.div`
@@ -29,9 +30,8 @@ export const PopupContainer = styled.div`
 		flex-direction: column;
 		width: 340px;
 		padding: 24px;
-		height: 100%;
-		position: none;
-		margin: 64px 0;
+		height: 90vh;
+		overflow-y: overlay;
 	}
 `;
 
@@ -156,8 +156,9 @@ export const PopupClose = styled.div`
 	border: 1px solid rgba(51, 51, 51, 0.2);
 	background-color: #fff;
 	margin: 20px;
-	max-width: 45px;
-	max-height: 45px;
+	width: 45px;
+	height: 45px;
+	line-height: 20px;
 	border-radius: 50px;
 	cursor: pointer;
 	margin-left: auto;

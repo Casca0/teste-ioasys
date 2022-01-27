@@ -58,7 +58,7 @@ export const HeaderLogout = styled.div`
 	cursor: pointer;
 
 	@media screen and (max-width: 768px){
-		top: 55%;
-		right: 16px;
+		top: 70%;
+		right: 30px;
 	}
 `;

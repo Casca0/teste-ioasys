@@ -35,11 +35,20 @@ export const PaginationWrapper = styled.div`
 
 export const PrevButton = styled.button`
   ${ButtonStyle}
-  margin-right: 16px;
+  margin-left: 16px;
   transform: rotate(180deg);
-  `;
+
+	@media screen and (max-width: 768px){
+		margin-right: 16px;
+		margin-left: 0;
+	}
+`;
 
 export const NextButton = styled.button`
   ${ButtonStyle}
-  margin-left: 16px;
+	margin-left: 8px;
+	
+	@media screen and (max-width: 768px){
+		margin-left: 16px;
+	}
 `;
