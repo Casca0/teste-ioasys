@@ -17,6 +17,7 @@ const BookList = () => {
 				pags={book.pageCount}
 				publisher={book.publisher}
 				datePublished={book.published}
+				id={book.id}
 			/>)}
 		</S.Books>
 	);

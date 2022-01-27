@@ -5,8 +5,11 @@ export const HeaderWrapper = styled.header`
 	display: flex;
 	flex-direction: row;
 	align-items: flex-end;
-	padding-left: 115px;
+	padding: 0 115px;
 	margin-bottom: 20px;
+	display: block;
+	position: relative;
+
 	@media screen and (max-width: 768px){
 		padding-left: 16px;
 		padding-top: 42px;
@@ -33,8 +36,9 @@ export const HeaderUsername = styled.span`
 	line-height: 16px;
 	text-align: right;
 	position: absolute;
-	right: 15%;
-	top: 4%;
+	right: 250px;
+	top: 50%;
+	transform: translate(50%, -50%);
 
 	@media screen and (max-width: 768px){
 		display: none;
@@ -48,7 +52,9 @@ export const HeaderLogout = styled.div`
 	background-position: center;
 	padding: 15px;
 	position: absolute;
-	right: 10%;
+	right: 130px;
+	top: 50%;
+	transform: translate(50%, -50%);
 	cursor: pointer;
 
 	@media screen and (max-width: 768px){

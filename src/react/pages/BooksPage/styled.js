@@ -14,6 +14,7 @@ export const Styles = createGlobalStyle`
 		background-position: center;
 		background-size: cover;
 		height: 100%;
+		position: relative;
 
 		@media screen and (max-width: 768px){
 			background: url(${mobile}) no-repeat;

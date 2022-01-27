@@ -5,7 +5,6 @@ export const CardWrapper = styled.div`
 	display: flex;
 	box-shadow: 0px 6px 24px rgba(84, 16, 95, 0.13);
 	cursor: pointer;
-	width: 272px;
 	min-height: 160px;
 	border-radius: 4px;
 	padding: 23px 15px;

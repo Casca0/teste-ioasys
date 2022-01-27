@@ -3,11 +3,14 @@ import React from 'react';
 import * as S from './styled';
 
 import missing from '../../../../images/missing-book.svg';
+import { useBooksContext } from '../../../../contexts/BooksContext';
 
-const BookCard = ({ image, title, author, pags, publisher, datePublished }) => {
+const BookCard = ({ image, title, author, pags, publisher, datePublished, id }) => {
+
+	const { searchBook } = useBooksContext();
 
 	return (
-		<S.CardWrapper>
+		<S.CardWrapper onClick={() => searchBook(id)}>
 			<S.BookImage src={image ? image : missing}/>
 			<S.BookInfoContainer>
 				<S.BookInfoTop>

@@ -4,7 +4,7 @@ const api = axios.create({
 	baseURL: 'https://books.ioasys.com.br/api/v1'
 });
 
-export const fetchBooks = async () => {
+export const fetchBooks = async (page) => {
 	const authToken = localStorage.getItem('authorization');
 	const config = {
 		method: 'GET',
@@ -15,9 +15,9 @@ export const fetchBooks = async () => {
 	};
 
 	try {
-		const response = await api('/books?page=1&amount=12', config);
+		const response = await api(`/books?page=${page}&amount=12`, config);
 		const data = response.data;
-		
+        
 		return data;
 	} catch(err) {
 		console.error(err);
