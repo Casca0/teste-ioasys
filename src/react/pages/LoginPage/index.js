@@ -1,12 +1,12 @@
 import React from 'react';
 
-import GlobalStyle from '../../styles/styled';
+import Styles from './styled';
 import LoginForm from './components/LoginForm';
 
 const LoginPage = () => {
 	return (
 		<>
-			<GlobalStyle />
+			<Styles />
 			<LoginForm />
 		</>
 	);

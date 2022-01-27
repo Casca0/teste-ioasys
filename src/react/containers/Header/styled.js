@@ -1,11 +1,18 @@
 import styled from 'styled-components';
 import logout from '../../images/logout.svg';
 
-export const HeaderWrapper = styled.section`
+export const HeaderWrapper = styled.header`
 	display: flex;
 	flex-direction: row;
 	align-items: flex-end;
 	padding-left: 115px;
+	margin-bottom: 20px;
+	@media screen and (max-width: 768px){
+		padding-left: 16px;
+		padding-top: 42px;
+		width: 100%;
+		position: relative;
+	}
 `;
 
 export const HeaderTitle = styled.h1`
@@ -28,6 +35,10 @@ export const HeaderUsername = styled.span`
 	position: absolute;
 	right: 15%;
 	top: 4%;
+
+	@media screen and (max-width: 768px){
+		display: none;
+	}
 `;
 
 export const HeaderLogout = styled.div`
@@ -39,4 +50,9 @@ export const HeaderLogout = styled.div`
 	position: absolute;
 	right: 10%;
 	cursor: pointer;
+
+	@media screen and (max-width: 768px){
+		top: 55%;
+		right: 16px;
+	}
 `;

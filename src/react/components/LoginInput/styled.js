@@ -68,4 +68,20 @@ export const LoginError = styled.div`
 	padding: 16px;
 	margin-top: 24px;
 	border-radius: 4px;
+	position: relative;
+
+	&::before {
+		content: '';
+    width: 1px;
+    height: 1px;
+    border-top: 5px solid rgba(255, 255, 255, 0.6);
+    border-left: 5px solid  rgba(255, 255, 255, 0.6);
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: 24px;
+    transform: rotate(45deg);
+	}
 `;

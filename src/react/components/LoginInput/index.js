@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useAuthContext } from '../../contexts/AuthContext';
-// import { useAuth } from '../../hooks/useAuth';
 
 import * as S from './styled';
 
@@ -23,7 +22,7 @@ const LoginInput = () => {
 				<S.InputLabel>Senha</S.InputLabel>
 				<S.InputContent type='password' onChange={(ev) => setPassword(ev.target.value)}/>
 				<S.SubmitButton type='button' value='Entrar' onClick={handleSubmit}/>
-				{isError ? <S.LoginError>Email e/ou senha incorretos.</S.LoginError> : <></>}
+				{isError && <S.LoginError>Email e/ou senha incorretos.</S.LoginError>}
 			</S.InputWrapper>
 		</>
 	);

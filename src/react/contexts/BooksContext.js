@@ -4,19 +4,20 @@ import { fetchBooks } from '../services/fetchBooks';
 const BooksContext = createContext({});
 
 export function BooksProvider({ children }) {
-	const [book, setBook] = useState([]);
+	const [books, setBooks] = useState([]);
 
 	useEffect( () => {
 		async function fetchData() {
 			const response = await fetchBooks();
-			console.log('data context', response.data);
-			setBook(response.data);
+			const { data } = response;
+
+			setBooks(data);
 		}
 		fetchData();
 	}, []);
 
 	return (
-		<BooksContext.Provider value={{ book }}>
+		<BooksContext.Provider value={{ books }}>
 			{children}
 		</BooksContext.Provider>
 	);

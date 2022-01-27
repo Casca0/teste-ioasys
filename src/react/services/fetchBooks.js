@@ -17,8 +17,8 @@ export const fetchBooks = async () => {
 	try {
 		const response = await api('/books?page=1&amount=12', config);
 		const data = response.data;
-		console.log(data);
-		return { data };
+		
+		return data;
 	} catch(err) {
 		console.error(err);
 	}
